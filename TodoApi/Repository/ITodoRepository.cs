@@ -4,7 +4,8 @@ namespace TodoApi.Repository
 {
     public interface ITodoRepository
     {
-        Task<List<Todo>> GetAllTodosAsync();
+        Task<List<Todo>> GetAllTodosAsync(
+            string? search , string? category , TodoPriority? priority);
 
         Task<Todo?> GetByIdAsync(int id);
 

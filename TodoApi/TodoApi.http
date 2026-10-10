@@ -4,26 +4,29 @@
 GET {{TodoApi_HostAddress}}/api/Todo
 Accept: application/json
 
+### Get todos by search term
+GET {{TodoApi_HostAddress}}/api/Todo?priority=Low
+Accept: application/json
 
 ### Create a todo
 POST {{TodoApi_HostAddress}}/api/Todo
 Content-Type: application/json
 {
-  "title": "Test completion update",
+  "title": "checking priority",
   "description": "Testing PUT request",
   "isCompleted": false,
-  "priority": "Medium",
+  "priority": "Low",
   "category": "Work"
 }
 
 
 ### Get todo by id
-GET {{TodoApi_HostAddress}}/api/Todo/1
+GET {{TodoApi_HostAddress}}/api/Todo/5
 Accept: application/json
 
 
 ### Update todo
-PUT {{TodoApi_HostAddress}}/api/Todo/2
+PUT {{TodoApi_HostAddress}}/api/Todo/5
 Content-Type: application/json
 
 {

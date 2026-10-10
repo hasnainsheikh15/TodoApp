@@ -13,9 +13,28 @@ namespace TodoApi.Repository
 
         }
 
-        public async Task<List<Todo>> GetAllTodosAsync() {
+        public async Task<List<Todo>> GetAllTodosAsync(
+             string? search, string? category, TodoPriority? priority
+            ) 
+        {
 
-            return await _context.Todos.ToListAsync();
+            var query = _context.Todos.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(search)) {
+                query = query.Where
+                    (todo => todo.Title.Contains(search) || (todo.Description != null && todo.Description.Contains(search)));
+            }
+
+            if (!string.IsNullOrWhiteSpace(category)) {
+                query = query.Where(todo => todo.Category == category);
+            }
+
+            if(priority.HasValue)
+            {
+                query = query.Where(todo => todo.Priority == priority.Value);
+            }
+
+            return await query.ToListAsync();
         }
 
         public async Task<Todo?> GetByIdAsync(int id) {

@@ -14,9 +14,11 @@ public class TodoService : ITodoService
         _repository = repository;
     }
 
-    public async Task<List<Todo>> GetAllTodosAsync()
+    public async Task<List<Todo>> GetAllTodosAsync(string? search,
+        string? category,
+        TodoPriority? priority)
     {
-        return await _repository.GetAllTodosAsync();
+        return await _repository.GetAllTodosAsync(search,category,priority);
     }
 
     public async Task<Todo> GetByIdAsync(int id)
