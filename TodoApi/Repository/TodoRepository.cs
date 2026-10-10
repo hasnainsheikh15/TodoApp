@@ -35,6 +35,8 @@ namespace TodoApi.Repository
 
         public async Task<Todo?> UpdateAsync(int id, Todo todo) {
 
+
+
             var existingTodo = await _context.Todos.FindAsync(id);
 
             if (existingTodo == null) return null;
@@ -44,7 +46,7 @@ namespace TodoApi.Repository
             existingTodo.IsCompleted = todo.IsCompleted;
             existingTodo.Priority = todo.Priority;
             existingTodo.Category = todo.Category;
-            existingTodo.UpdatedAt = todo.UpdatedAt;
+            existingTodo.UpdatedAt = DateTime.UtcNow;
 
             await _context.SaveChangesAsync();
 

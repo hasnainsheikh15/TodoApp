@@ -1,4 +1,5 @@
-﻿using TodoApi.Models;
+﻿using TodoApi.DTOs;
+using TodoApi.Models;
 
 namespace TodoApi.Services;
 
@@ -6,11 +7,11 @@ public interface ITodoService
 {
     Task<List<Todo>> GetAllTodosAsync();
 
-    Task<Todo?> GetByIdAsync(int id);
+    Task<Todo> GetByIdAsync(int id);
 
-    Task<Todo> CreateAsync(Todo todo);
+    Task<Todo> CreateAsync(CreateTodoRequest request);
 
-    Task<Todo?> UpdateAsync(int id, Todo todo);
+    Task<Todo> UpdateAsync(int id, UpdateTodoRequest request);
 
-    Task<bool> DeleteAsync(int id);
+    Task DeleteAsync(int id);
 }

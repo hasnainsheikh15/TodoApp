@@ -4,7 +4,7 @@ namespace TodoApi.Models
 {
     public class Todo
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public String Title { get; set; } = string.Empty;
 

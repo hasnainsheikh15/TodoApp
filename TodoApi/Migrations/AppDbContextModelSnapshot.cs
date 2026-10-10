@@ -24,11 +24,11 @@ namespace TodoApi.Migrations
 
             modelBuilder.Entity("TodoApi.Models.Todo", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Category")
                         .IsRequired()
@@ -53,7 +53,7 @@ namespace TodoApi.Migrations
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Todos");
                 });
