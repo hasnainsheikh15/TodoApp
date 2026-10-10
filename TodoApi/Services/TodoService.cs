@@ -52,7 +52,7 @@ public class TodoService : ITodoService
 
     public async Task<Todo> UpdateAsync(int id, UpdateTodoRequest request)
     {
-        Console.WriteLine($"REQUEST IsCompleted: {request.IsCompleted}");
+        
         var todo = new Todo
         {
             Title = request.Title,
@@ -62,7 +62,7 @@ public class TodoService : ITodoService
             IsCompleted = request.IsCompleted
         };
 
-        Console.WriteLine($"TODO IsCompleted: {todo.IsCompleted}");
+       
         var updatedTodo =  await _repository.UpdateAsync(id, todo);
 
         if (updatedTodo == null)
@@ -70,7 +70,7 @@ public class TodoService : ITodoService
             throw new NotFoundException(
                 $"Todo with ID {id} was not found.");
         }
-        Console.WriteLine($"UPDATED IsCompleted: {updatedTodo.IsCompleted}");
+       
         return updatedTodo;
 
     }

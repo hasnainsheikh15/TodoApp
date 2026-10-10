@@ -1,0 +1,287 @@
+.app-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 56px;
+}
+
+.app-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.api-pill {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+
+.toolbar,
+.form-section,
+.list-section,
+.error-message {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.toolbar {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(220px, 1fr) 180px 180px;
+  margin-bottom: 18px;
+  padding: 18px;
+}
+
+.form-section,
+.list-section {
+  padding: 22px;
+}
+
+.form-section {
+  margin-bottom: 18px;
+}
+
+.section-heading {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.todo-form {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 180px 180px auto;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+label {
+  color: var(--muted);
+  display: grid;
+  font-size: 13px;
+  font-weight: 700;
+  gap: 7px;
+}
+
+input,
+select,
+textarea {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font: inherit;
+  min-height: 42px;
+  padding: 9px 11px;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--focus);
+  outline: 3px solid rgba(37, 99, 235, 0.15);
+}
+
+button {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  min-height: 42px;
+  padding: 9px 14px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.primary-button {
+  align-self: end;
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.secondary-button,
+.ghost-button {
+  background: #ffffff;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.danger-button {
+  background: #fff1f2;
+  border-color: #fecdd3;
+  color: #be123c;
+}
+
+.error-message {
+  border-color: #fecdd3;
+  color: #be123c;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+}
+
+.summary,
+.empty-state {
+  color: var(--muted);
+}
+
+.todo-list {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-item {
+  align-items: flex-start;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: auto 1fr auto;
+  padding: 16px;
+}
+
+.todo-item.is-completed {
+  background: #f8fafc;
+}
+
+.complete-control {
+  padding-top: 5px;
+}
+
+.complete-control input {
+  height: 20px;
+  min-height: 20px;
+  width: 20px;
+}
+
+.todo-copy {
+  display: grid;
+  gap: 8px;
+}
+
+.todo-title-row {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.todo-item h3 {
+  color: var(--heading);
+  font-size: 18px;
+  margin: 0;
+}
+
+.todo-item.is-completed h3 {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.todo-copy p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.todo-meta {
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 13px;
+  gap: 8px;
+}
+
+.todo-meta span {
+  background: #eef2f7;
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+
+.priority-badge {
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 8px;
+}
+
+.priority-badge.low {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.priority-badge.medium {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.priority-badge.high {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.sr-only {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+@media (max-width: 820px) {
+  .app-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .api-pill {
+    white-space: normal;
+  }
+
+  .toolbar,
+  .todo-form,
+  .todo-item {
+    grid-template-columns: 1fr;
+  }
+
+  .todo-actions {
+    width: 100%;
+  }
+
+  .todo-actions button {
+    flex: 1;
+  }
+}
