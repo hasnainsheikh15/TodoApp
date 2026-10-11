@@ -244,18 +244,3 @@ From `TodoApi`, configure the connection string and run:
 dotnet ef database update
 ```
 
-## Security notes
-
-- Never commit database passwords, API keys, or other secrets.
-- Use .NET User Secrets for local development.
-- Use environment variables or a secure secret store for deployment.
-- The current CORS policy is intended for local development. If deploying the frontend, restrict CORS to the intended frontend origin.
-
-## Development notes
-
-Run the backend and frontend in separate terminals. The React app is intentionally a separate project from the ASP.NET Core API; it does not need to appear in Visual Studio's .NET Solution Explorer to run.
-
----
-
-**Author:** Hasnain Sheikh  
-**Repository:** https://github.com/hasnainsheikh15/TodoApp
